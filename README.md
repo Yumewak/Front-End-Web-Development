@@ -414,3 +414,66 @@ prompt ("Whats your name?")
     
     //Initialise Object
     var bellBoy1 = new BellBoy("Timmy", 19, true, ["French", "English"])
+
+## Objects, their methods and the Dot notation
+    var bellBoy1 = {
+        name: "Timmy";
+        age: 19,
+        hasWorkPermit: true,
+        languages: ["French", "English"]
+        moveSuitcase: function() {
+            alert("May I take your suitcase?")
+            pickUpSuitcase();
+            move();
+        }
+    }
+
+    //Call Method
+    bellBoy1.moveSuitcase()
+    
+    //Incorporate this method into our constructor function
+    function BellBoy (name, age, hasWorkPermit, languages, moveSuitcase){
+        this.name = name,
+        this.age = age,
+        this.hasWorkPermit = hasWorkPermit,
+        this.languages = languages,
+        this.moveSuitcase = function() {
+            alert("May I take your suitcase?");
+            pickUpSuitcase();
+            move();
+        }
+    }
+    
+    //add a method to our HouseKeeper constructor function
+    //and this method is just called clean
+    //our method send an alert that says "Cleaning in progress"
+    //create a new houseKeeper from that constructor function, and call the cleaning method associated with
+    
+    function HouseKeeper (yearsOfExperience, name, cleaningRepertoire, clean){
+        this.yearsOfExperience = yearsOfExperience;
+        this.name = name;
+        this.cleaningRepertoire = cleaningRepertoire;
+        this.clean = function () {
+            alert("Cleaning in progress")
+        }
+    }
+    
+    // Create a new houseKeeper from that constructor function
+    var houseKeeper1 = new HouseKeeper (12, "Carlos", ["Bathroom", "Lobby", "Bedroom"])
+    
+    //Call the cleaning method
+    houseKeeper1.clean()
+    -------------------------------------------------------------------------------------------------
+    //The constructor function for "Audio" it might look like this
+    function Audio (fileLocation) {
+      this.fileLocation = fileLocation;
+      this.play = function(){
+        //Tap into the audio hardware
+        //Check the file at fileLocation exists
+        //Check the file at fileLocation is a sound file
+        //Play the file at fileLocation
+      }
+    }
+
+    var tom1 = new Audio("sounds/tom-1.mp3");
+    tom1.play();
