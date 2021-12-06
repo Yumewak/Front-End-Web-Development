@@ -388,3 +388,29 @@ prompt ("Whats your name?")
     function calculator(num1, num2, operator) {
     return operator(num1, num2);
     }
+
+## JavaScript Objects
+    //alert("Hello, my name is " + bellBoy1Name)
+    var bellBoy1Name = "Timmy";
+    var bellBoy1Age = 19;
+    var bellBoy1HasWorkPermit = true;
+    var bellBoy1Languages = ["French","English"];
+    
+    //alert("Hello, my name is " + bellBoy1.name)
+    var bellBoy1 = {
+        name: "Timmy",
+        age: 19,
+        hasWorkPermit: true,
+        languages: ["French", "English"]
+    }
+    
+    //Constructor Function, names have to be capitalized, the first letter of the first word also has to be capitalized
+    function BellBoy (name, age, hasWorkPermit, languages){
+        this.name = name;
+        this.age = age;
+        this.hasWorkPermit = hasWorkPermit;
+        this.languages = languages;
+    }
+    
+    //Initialise Object
+    var bellBoy1 = new BellBoy("Timmy", 19, true, ["French", "English"])
