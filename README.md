@@ -477,3 +477,37 @@ prompt ("Whats your name?")
 
     var tom1 = new Audio("sounds/tom-1.mp3");
     tom1.play();
+## Understanding callbacks and how to respond to events
+    $0.addEventListener("click", function(event){
+        console.log(event);
+    });
+    
+    function sayHi(to){
+        console.log("Hello, " + to)
+    }
+    
+    
+    //This is the part that we can't really see
+    function anotherAddEventListener(typeOfEvent, callback){
+        //Detect Event Code..
+        var eventThatHappened = {
+        eventType: "keypress",
+        key: "p",
+        durationOfKeyPress: 2
+        }
+    if (eventThatHappened.eventType === typeOfEvent){
+        callback(eventThatHappened);
+    }
+    }
+
+    ----------------------------------------------------
+    //This is the code that we can see
+    
+    anotherAddEventListener("keypress", function(event){
+        console.log(event);
+    });
+    
+    //This is the proper code
+    document.addEventListener("keydown", function(event){
+        console.log(event);
+    })
