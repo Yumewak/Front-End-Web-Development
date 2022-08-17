@@ -367,6 +367,31 @@ prompt ("Whats your name?")
         return fib
     
     }
+## Yet another solution finding by me
+```javascript
+//0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 ...
+//IMPORTANT: The solution checker is expecting an array as the correct output.
+// if you decide to create a for loop, make sure you explicitly specify var i = 0 rather than simply writing i = 0
+function fibonacciGenerator (n) {
+//Do NOT change any of the code above 👆
+    
+    //Write your code here:
+    var array = [];
+    for (var count = 0; count < n; count++) {
+        if (count < 2) {
+            array.push(count);
+        } else {
+            array.push(array[count - 1] + array[count - 2]);
+        }
+    }
+    return array;
+    //Return an array of fibonacci numbers starting from 0.
+    
+//Do NOT change any of the code below 👇
+}
+var output = fibonacciGenerator(13);
+console.log(output);
+```
 
 ## Higer oder function
     function add(num1, num2) {
